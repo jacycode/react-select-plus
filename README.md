@@ -21,7 +21,7 @@ Testing, feedback and PRs for the new version are appreciated.
 
 ## Demo & Examples
 
-Live demo: [https://github.com/jacycode/react-select-plus-2](https://github.com/jacycode/react-select-plus-2)
+Live demo: [react-select-plus-2/examples/dist/index.html](https://github.com/jacycode/react-select-plus-2/blob/master/examples/dist/index.html)
 
 To build the **new 1.0.0** examples locally, clone this repo then run:
 
