@@ -49,6 +49,17 @@ const OptionGroup = React.createClass({
 		var { option } = this.props;
 		var className = classNames(this.props.className, option.className);
 
+		var optiongroupLabelItem = this.props.children[0];
+		this.props.children.shift();
+		return <div className={className}
+				onMouseDown={this.blockEvent}
+				onClick={this.blockEvent}>
+				<div className="Select-option-group-label" style={{marginLeft:'-10px'}}>
+					{optiongroupLabelItem}
+				</div>
+				{this.props.children}
+			</div>;
+
 		return option.disabled ? (
 			<div className={className}
 				onMouseDown={this.blockEvent}
