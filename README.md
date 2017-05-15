@@ -1,3 +1,10 @@
+
+React-Select-Plus-2
+
+将React-Select-Plus中的Optiongroup设置为Label可点击。
+
+
+
 React-Select-Plus
 
 A Select control for [React](http://facebook.github.io/react/index.html) based on [JedWatson/React-Select](https://github.com/JedWatson/react-select/).
@@ -14,7 +21,7 @@ Testing, feedback and PRs for the new version are appreciated.
 
 ## Demo & Examples
 
-Live demo: [github.hubspot.com/react-select-plus/](http://github.hubspot.com/react-select-plus/)
+Live demo: [https://github.com/jacycode/react-select-plus-2](https://github.com/jacycode/react-select-plus-2)
 
 To build the **new 1.0.0** examples locally, clone this repo then run:
 
