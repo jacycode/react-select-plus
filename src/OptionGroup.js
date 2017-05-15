@@ -48,40 +48,49 @@ const OptionGroup = React.createClass({
 	render () {
 		var { option } = this.props;
 		var className = classNames(this.props.className, option.className);
-
-		var optiongroupLabelItem = this.props.children[0];
-		this.props.children.shift();
-		return <div className={className}
-				onMouseDown={this.blockEvent}
-				onClick={this.blockEvent}>
-				<div className="Select-option-group-label" style={{marginLeft:'-10px'}}>
-					{optiongroupLabelItem}
+		if(this.props.label == null){
+			var optiongroupLabel = null;
+			var optiongroupvalues = [];
+			this.props.option.options.forEach((val, ind)=>{
+				if(val.type == "label"){
+					optiongroupLabel = this.props.children[ind];
+				}else{
+					optiongroupvalues.push(this.props.children[ind]);
+				}
+			});
+			return <div className={className}
+					onMouseDown={this.blockEvent}
+					onClick={this.blockEvent}>
+					<div className="Select-option-group-label" style={{marginLeft:'-10px'}}>
+						{optiongroupLabel}
+					</div>
+					{optiongroupvalues}
+				</div>;
+		}else{
+			return option.disabled ? (
+				<div className={className}
+					onMouseDown={this.blockEvent}
+					onClick={this.blockEvent}>
+					{this.props.children}
 				</div>
-				{this.props.children}
-			</div>;
-
-		return option.disabled ? (
-			<div className={className}
-				onMouseDown={this.blockEvent}
-				onClick={this.blockEvent}>
-				{this.props.children}
-			</div>
-		) : (
-			<div className={className}
-				style={option.style}
-				onMouseDown={this.handleMouseDown}
-				onMouseEnter={this.handleMouseEnter}
-				onMouseMove={this.handleMouseMove}
-				onTouchStart={this.handleTouchStart}
-				onTouchMove={this.handleTouchMove}
-				onTouchEnd={this.handleTouchEnd}
-				title={option.title}>
-				<div className="Select-option-group-label">
-					{this.props.label}
+			) : (
+				<div className={className}
+					style={option.style}
+					onMouseDown={this.handleMouseDown}
+					onMouseEnter={this.handleMouseEnter}
+					onMouseMove={this.handleMouseMove}
+					onTouchStart={this.handleTouchStart}
+					onTouchMove={this.handleTouchMove}
+					onTouchEnd={this.handleTouchEnd}
+					title={option.title}>
+					<div className="Select-option-group-label">
+						{this.props.label}
+					</div>
+					{this.props.children}
 				</div>
-				{this.props.children}
-			</div>
-		);
+			);
+		}
+		
 	}
 });
 
