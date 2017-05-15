@@ -1,8 +1,9 @@
 
-React-Select-Plus-2
-
-将React-Select-Plus中的Optiongroup设置为Label可点击。
-
+********************************************************
+**                React-Select-Plus-2                 **
+**                                                    **
+** 将React-Select-Plus中的Optiongroup设置为Label可点击。**
+********************************************************
 
 
 React-Select-Plus
