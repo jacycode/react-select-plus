@@ -858,49 +858,59 @@ var OptionGroup = _react2['default'].createClass({
 	},
 
 	render: function render() {
+		var _this = this;
+
 		var option = this.props.option;
 
 		var className = (0, _classnames2['default'])(this.props.className, option.className);
-
-		var optiongroupLabelItem = this.props.children[0];
-		this.props.children.shift();
-		return _react2['default'].createElement(
-			'div',
-			{ className: className,
-				onMouseDown: this.blockEvent,
-				onClick: this.blockEvent },
-			_react2['default'].createElement(
+		if (this.props.label == null) {
+			var optiongroupLabel = null;
+			var optiongroupvalues = [];
+			this.props.option.options.forEach(function (val, ind) {
+				if (val.type == "label") {
+					optiongroupLabel = _this.props.children[ind];
+				} else {
+					optiongroupvalues.push(_this.props.children[ind]);
+				}
+			});
+			return _react2['default'].createElement(
 				'div',
-				{ className: 'Select-option-group-label', style: { marginLeft: '-10px' } },
-				optiongroupLabelItem
-			),
-			this.props.children
-		);
-
-		return option.disabled ? _react2['default'].createElement(
-			'div',
-			{ className: className,
-				onMouseDown: this.blockEvent,
-				onClick: this.blockEvent },
-			this.props.children
-		) : _react2['default'].createElement(
-			'div',
-			{ className: className,
-				style: option.style,
-				onMouseDown: this.handleMouseDown,
-				onMouseEnter: this.handleMouseEnter,
-				onMouseMove: this.handleMouseMove,
-				onTouchStart: this.handleTouchStart,
-				onTouchMove: this.handleTouchMove,
-				onTouchEnd: this.handleTouchEnd,
-				title: option.title },
-			_react2['default'].createElement(
+				{ className: className,
+					onMouseDown: this.blockEvent,
+					onClick: this.blockEvent },
+				_react2['default'].createElement(
+					'div',
+					{ className: 'Select-option-group-label', style: { marginLeft: '-10px' } },
+					optiongroupLabel
+				),
+				optiongroupvalues
+			);
+		} else {
+			return option.disabled ? _react2['default'].createElement(
 				'div',
-				{ className: 'Select-option-group-label' },
-				this.props.label
-			),
-			this.props.children
-		);
+				{ className: className,
+					onMouseDown: this.blockEvent,
+					onClick: this.blockEvent },
+				this.props.children
+			) : _react2['default'].createElement(
+				'div',
+				{ className: className,
+					style: option.style,
+					onMouseDown: this.handleMouseDown,
+					onMouseEnter: this.handleMouseEnter,
+					onMouseMove: this.handleMouseMove,
+					onTouchStart: this.handleTouchStart,
+					onTouchMove: this.handleTouchMove,
+					onTouchEnd: this.handleTouchEnd,
+					title: option.title },
+				_react2['default'].createElement(
+					'div',
+					{ className: 'Select-option-group-label' },
+					this.props.label
+				),
+				this.props.children
+			);
+		}
 	}
 });
 
@@ -1420,6 +1430,7 @@ var Select = _react2['default'].createClass({
 	},
 
 	handleInputFocus: function handleInputFocus(event) {
+
 		if (this.props.disabled) return;
 		var isOpen = this.state.isOpen || this._openAfterFocus || this.props.openOnFocus;
 		if (this.props.onFocus) {
@@ -1427,7 +1438,7 @@ var Select = _react2['default'].createClass({
 		}
 		this.setState({
 			isFocused: true,
-			isOpen: isOpen
+			isOpen: true
 		});
 		this._openAfterFocus = false;
 	},
@@ -2221,7 +2232,6 @@ var Select = _react2['default'].createClass({
 			'is-searchable': this.props.searchable,
 			'has-value': valueArray.length
 		});
-
 		var removeMessage = null;
 		if (this.props.multi && !this.props.disabled && valueArray.length && !this.state.inputValue && this.state.isFocused && this.props.backspaceRemoves) {
 			removeMessage = _react2['default'].createElement(

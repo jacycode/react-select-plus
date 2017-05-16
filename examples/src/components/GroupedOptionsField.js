@@ -5,10 +5,10 @@ var ops = [{
 	label: 'Black',
 	value: 'black',
 }, {
-	label: 'Primary Colors',
 	options: [{
 		label: 'Yellow',
-		value: 'yellow'
+		value: 'yellow',
+		type:'label'
 	}, {
 		label: 'Red',
 		value: 'red'

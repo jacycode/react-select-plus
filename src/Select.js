@@ -457,6 +457,7 @@ const Select = React.createClass({
 	},
 
 	handleInputFocus (event) {
+		
 		if (this.props.disabled) return;
 		var isOpen = this.state.isOpen || this._openAfterFocus || this.props.openOnFocus;
 		if (this.props.onFocus) {
@@ -464,7 +465,7 @@ const Select = React.createClass({
 		}
 		this.setState({
 			isFocused: true,
-			isOpen: isOpen
+			isOpen: true
 		});
 		this._openAfterFocus = false;
 	},
@@ -1203,7 +1204,6 @@ const Select = React.createClass({
 			'is-searchable': this.props.searchable,
 			'has-value': valueArray.length,
 		});
-
 		let removeMessage = null;
 		if (this.props.multi &&
 			!this.props.disabled &&
