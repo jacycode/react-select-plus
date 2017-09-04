@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select-plus';
+import Select from 'react-select-plus-2';
 import { AutoSizer, VirtualScroll } from 'react-virtualized';
 
 const DATA = require('../data/cities');

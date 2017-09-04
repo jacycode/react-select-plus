@@ -457,7 +457,7 @@ const Select = React.createClass({
 	},
 
 	handleInputFocus (event) {
-		
+
 		if (this.props.disabled) return;
 		var isOpen = this.state.isOpen || this._openAfterFocus || this.props.openOnFocus;
 		if (this.props.onFocus) {
@@ -1222,6 +1222,7 @@ const Select = React.createClass({
 			<div ref={ref => this.wrapper = ref}
 				 className={className}
 				 style={this.props.wrapperStyle}>
+
 				{this.renderHiddenField(valueArray)}
 				<div ref={ref => this.control = ref}
 					className="Select-control"
