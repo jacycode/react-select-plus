@@ -266,7 +266,7 @@ function defaultChildren(props) {
 };
 module.exports = exports['default'];
 
-},{"./Select":"react-select-plus","./utils/stripDiacritics":12,"react":undefined}],2:[function(require,module,exports){
+},{"./Select":"react-select-plus-2","./utils/stripDiacritics":12,"react":undefined}],2:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -294,6 +294,10 @@ function reduce(obj) {
 var AsyncCreatable = _react2['default'].createClass({
 	displayName: 'AsyncCreatableSelect',
 
+	focus: function focus() {
+		this.select.focus();
+	},
+
 	render: function render() {
 		var _this = this;
 
@@ -311,6 +315,7 @@ var AsyncCreatable = _react2['default'].createClass({
 								return asyncProps.onInputChange(input);
 							},
 							ref: function (ref) {
+								_this.select = ref;
 								creatableProps.ref(ref);
 								asyncProps.ref(ref);
 							}
@@ -324,7 +329,7 @@ var AsyncCreatable = _react2['default'].createClass({
 
 module.exports = AsyncCreatable;
 
-},{"./Select":"react-select-plus","react":undefined}],3:[function(require,module,exports){
+},{"./Select":"react-select-plus-2","react":undefined}],3:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -550,6 +555,10 @@ var Creatable = _react2['default'].createClass({
 		}
 	},
 
+	focus: function focus() {
+		this.select.focus();
+	},
+
 	render: function render() {
 		var _this = this;
 
@@ -642,7 +651,7 @@ function shouldKeyDownEventCreateNewOption(_ref6) {
 
 module.exports = Creatable;
 
-},{"./Select":"react-select-plus","./utils/defaultFilterOptions":10,"./utils/defaultMenuRenderer":11,"react":undefined}],4:[function(require,module,exports){
+},{"./Select":"react-select-plus-2","./utils/defaultFilterOptions":10,"./utils/defaultMenuRenderer":11,"react":undefined}],4:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -838,34 +847,59 @@ var OptionGroup = _react2['default'].createClass({
 	},
 
 	render: function render() {
+		var _this = this;
+
 		var option = this.props.option;
 
 		var className = (0, _classnames2['default'])(this.props.className, option.className);
-
-		return option.disabled ? _react2['default'].createElement(
-			'div',
-			{ className: className,
-				onMouseDown: this.blockEvent,
-				onClick: this.blockEvent },
-			this.props.children
-		) : _react2['default'].createElement(
-			'div',
-			{ className: className,
-				style: option.style,
-				onMouseDown: this.handleMouseDown,
-				onMouseEnter: this.handleMouseEnter,
-				onMouseMove: this.handleMouseMove,
-				onTouchStart: this.handleTouchStart,
-				onTouchMove: this.handleTouchMove,
-				onTouchEnd: this.handleTouchEnd,
-				title: option.title },
-			_react2['default'].createElement(
+		if (this.props.label == null) {
+			var optiongroupLabel = null;
+			var optiongroupvalues = [];
+			this.props.option.options.forEach(function (val, ind) {
+				if (val.type == "label") {
+					optiongroupLabel = _this.props.children[ind];
+				} else {
+					optiongroupvalues.push(_this.props.children[ind]);
+				}
+			});
+			return _react2['default'].createElement(
 				'div',
-				{ className: 'Select-option-group-label' },
-				this.props.label
-			),
-			this.props.children
-		);
+				{ className: className,
+					onMouseDown: this.blockEvent,
+					onClick: this.blockEvent },
+				_react2['default'].createElement(
+					'div',
+					{ className: 'Select-option-group-label', style: { marginLeft: '-10px' } },
+					optiongroupLabel
+				),
+				optiongroupvalues
+			);
+		} else {
+			return option.disabled ? _react2['default'].createElement(
+				'div',
+				{ className: className,
+					onMouseDown: this.blockEvent,
+					onClick: this.blockEvent },
+				this.props.children
+			) : _react2['default'].createElement(
+				'div',
+				{ className: className,
+					style: option.style,
+					onMouseDown: this.handleMouseDown,
+					onMouseEnter: this.handleMouseEnter,
+					onMouseMove: this.handleMouseMove,
+					onTouchStart: this.handleTouchStart,
+					onTouchMove: this.handleTouchMove,
+					onTouchEnd: this.handleTouchEnd,
+					title: option.title },
+				_react2['default'].createElement(
+					'div',
+					{ className: 'Select-option-group-label' },
+					this.props.label
+				),
+				this.props.children
+			);
+		}
 	}
 });
 
@@ -1184,7 +1218,7 @@ module.exports = function stripDiacritics(str) {
 	return str;
 };
 
-},{}],"react-select-plus":[function(require,module,exports){
+},{}],"react-select-plus-2":[function(require,module,exports){
 /*!
   Copyright (c) 2016 Jed Watson.
   Licensed under the MIT License (MIT), see
@@ -1304,6 +1338,7 @@ var Select = _react2['default'].createClass({
 
 	propTypes: {
 		addLabelText: _react2['default'].PropTypes.string, // placeholder displayed when you want to add a label on a multi-value input
+		'aria-describedby': _react2['default'].PropTypes.string, // HTML ID(s) of element(s) that should be used to describe this input (for assistive tech)
 		'aria-label': _react2['default'].PropTypes.string, // Aria label (for assistive tech)
 		'aria-labelledby': _react2['default'].PropTypes.string, // HTML ID of an element that should be used as the label (for assistive tech)
 		arrowRenderer: _react2['default'].PropTypes.func, // Create drop-down caret element
@@ -1695,6 +1730,7 @@ var Select = _react2['default'].createClass({
 	},
 
 	handleInputFocus: function handleInputFocus(event) {
+
 		if (this.props.disabled) return;
 		var isOpen = this.state.isOpen || this._openAfterFocus || this.props.openOnFocus;
 		if (this.props.onFocus) {
@@ -1702,7 +1738,7 @@ var Select = _react2['default'].createClass({
 		}
 		this.setState({
 			isFocused: true,
-			isOpen: isOpen
+			isOpen: true
 		});
 		this._openAfterFocus = false;
 	},
@@ -2187,6 +2223,7 @@ var Select = _react2['default'].createClass({
 			'aria-owns': ariaOwns,
 			'aria-haspopup': '' + isOpen,
 			'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
+			'aria-describedby': this.props['aria-describedby'],
 			'aria-labelledby': this.props['aria-labelledby'],
 			'aria-label': this.props['aria-label'],
 			className: className,
@@ -2495,7 +2532,6 @@ var Select = _react2['default'].createClass({
 			'is-searchable': this.props.searchable,
 			'has-value': valueArray.length
 		});
-
 		var removeMessage = null;
 		if (this.props.multi && !this.props.disabled && valueArray.length && !this.state.inputValue && this.state.isFocused && this.props.backspaceRemoves) {
 			removeMessage = _react2['default'].createElement(
