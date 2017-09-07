@@ -1,6 +1,6 @@
 {
   "name": "react-select-plus-2",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A fork of react-select-2 with support group title label to click",
   "main": "lib/Select.js",
   "style": "dist/react-select-plus.min.css",

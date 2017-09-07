@@ -30,10 +30,13 @@
 		color: @select-item-color;
 		display: inline-block;
 		font-size: @select-item-font-size;
-		line-height: 1.4;
+	  	font-size: 12px;
+		line-height: 12px;
 		margin-left: @select-item-gutter;
 		margin-top: @select-item-gutter;
-		vertical-align: top;
+	  	margin-top: 0;
+		vertical-align: middle;
+	  	//height:18px;
 	}
 
 	// common
@@ -48,6 +51,7 @@
 		.border-right-radius( @select-item-border-radius );
 		cursor: default;
 		padding: @select-item-padding-vertical @select-item-padding-horizontal;
+	  	height: 14px;
 	}
 	a.Select-value-label {
 		color: @select-item-color;

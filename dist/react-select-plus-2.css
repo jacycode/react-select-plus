@@ -36,6 +36,7 @@
   border-spacing: 0;
   border-collapse: separate;
   height: 36px;
+  height: 20px;
   outline: none;
   overflow: hidden;
   position: relative;
@@ -74,11 +75,13 @@
   color: #aaa;
   left: 0;
   line-height: 34px;
+  line-height: 18px;
+  height: 18px;
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 1px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -87,6 +90,7 @@
 .has-value.Select--single > .Select-control .Select-value .Select-value-label,
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
   color: #333;
+  font-size: 12px;
 }
 .has-value.Select--single > .Select-control .Select-value a.Select-value-label,
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label {
@@ -103,6 +107,7 @@
 }
 .Select-input {
   height: 34px;
+  height: 20px;
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
@@ -119,8 +124,6 @@
   margin: 0;
   outline: none;
   line-height: 14px;
-  /* For IE 8 compatibility */
-  padding: 8px 0 12px;
   /* For IE 8 compatibility */
   -webkit-appearance: none;
 }
@@ -315,10 +318,12 @@
   color: #007eff;
   display: inline-block;
   font-size: 0.9em;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 12px;
   margin-left: 5px;
   margin-top: 5px;
-  vertical-align: top;
+  margin-top: 0;
+  vertical-align: middle;
 }
 .Select--multi .Select-value-icon,
 .Select--multi .Select-value-label {
@@ -330,6 +335,7 @@
   border-top-right-radius: 2px;
   cursor: default;
   padding: 2px 5px;
+  height: 14px;
 }
 .Select--multi a.Select-value-label {
   color: #007eff;

@@ -55,6 +55,7 @@
 	border-spacing: 0;
 	border-collapse: separate;
 	height: @select-input-height;
+  	height: 20px;
 	outline: none;
 	overflow: hidden;
 	position: relative;
@@ -105,11 +106,13 @@
 	color: @select-input-placeholder;
 	left: 0;
 	line-height: @select-input-internal-height;
+  	line-height: 18px;
+  	height:18px;
 	padding-left: @select-padding-horizontal;
 	padding-right: @select-padding-horizontal;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 1px;
 
 	// crop text
 	max-width: 100%;
@@ -122,6 +125,7 @@
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value {
 	.Select-value-label {
 		color: @select-text-color;
+	  	font-size: 12px;
 	}
 	a.Select-value-label {
 		cursor: pointer;
@@ -142,6 +146,7 @@
 .Select-input {
 	// inherits `display: inline-block` from "react-input-autosize"
 	height: @select-input-internal-height;
+  	height: 20px;
 	padding-left: @select-padding-horizontal;
 	padding-right: @select-padding-horizontal;
 	vertical-align: middle;
@@ -160,7 +165,7 @@
 		outline: none;
 		// padding: 0;
 		line-height: 14px;  /* For IE 8 compatibility */
-		padding: ((@select-input-internal-height - 14) / 2 - 2) 0 ((@select-input-internal-height - 14) / 2 + 2);  /* For IE 8 compatibility */
+		//padding: ((@select-input-internal-height - 14) / 2 - 2) 0 ((@select-input-internal-height - 14) / 2 + 2);  /* For IE 8 compatibility */
 		-webkit-appearance: none;
 
 		.is-focused & {
