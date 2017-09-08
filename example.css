@@ -90,7 +90,7 @@
 .has-value.Select--single > .Select-control .Select-value .Select-value-label,
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
   color: #333;
-  font-size: 12px;
+  font-size: 14px;
 }
 .has-value.Select--single > .Select-control .Select-value a.Select-value-label,
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label {
@@ -318,7 +318,7 @@
   color: #007eff;
   display: inline-block;
   font-size: 0.9em;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 12px;
   margin-left: 5px;
   margin-top: 5px;
