@@ -20,7 +20,7 @@ var StatesField = React.createClass({
 			country: 'AU',
 			disabled: false,
 			searchable: this.props.searchable,
-			selectValue: 'new-south-wales',
+			selectValue: null,
 			clearable: true,
 		};
 	},
@@ -51,7 +51,7 @@ var StatesField = React.createClass({
 		return (
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
-				<Select ref="stateSelect" autofocus options={options} simpleValue clearable={this.state.clearable} name="selected-state" disabled={this.state.disabled} value={this.state.selectValue} onChange={this.updateValue} searchable={this.state.searchable} />
+				<Select ref="stateSelect" autofocus options={options} simpleValue clearable={this.state.clearable} name="selected-state" disabled={this.state.disabled} value={this.state.selectValue} onChange={this.updateValue} searchable={this.state.searchable} placeholder="请选择"/>
 
 				<div style={{ marginTop: 14 }}>
 					<button type="button" onClick={this.focusStateSelect}>Focus Select</button>

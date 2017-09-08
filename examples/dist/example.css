@@ -75,13 +75,14 @@
   color: #aaa;
   left: 0;
   line-height: 34px;
-  line-height: 18px;
-  height: 18px;
+  line-height: 20px;
+  height: 20px;
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
   right: 0;
   top: 1px;
+  font-size: 12px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -125,6 +126,8 @@
   outline: none;
   line-height: 14px;
   /* For IE 8 compatibility */
+  padding: 0;
+  padding-top: 2px;
   -webkit-appearance: none;
 }
 .is-focused .Select-input > input {
@@ -246,6 +249,7 @@
   width: 100%;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
+  font-size: 12px;
 }
 .Select-menu {
   max-height: 198px;
@@ -318,7 +322,7 @@
   color: #007eff;
   display: inline-block;
   font-size: 0.9em;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 12px;
   margin-left: 5px;
   margin-top: 5px;

@@ -106,13 +106,14 @@
 	color: @select-input-placeholder;
 	left: 0;
 	line-height: @select-input-internal-height;
-  	line-height: 18px;
-  	height:18px;
+  	line-height: 20px;
+  	height:20px;
 	padding-left: @select-padding-horizontal;
 	padding-right: @select-padding-horizontal;
 	position: absolute;
 	right: 0;
 	top: 1px;
+  	font-size: 12px;
 
 	// crop text
 	max-width: 100%;
@@ -166,6 +167,8 @@
 		// padding: 0;
 		line-height: 14px;  /* For IE 8 compatibility */
 		//padding: ((@select-input-internal-height - 14) / 2 - 2) 0 ((@select-input-internal-height - 14) / 2 + 2);  /* For IE 8 compatibility */
+	  	padding: 0;
+	  	padding-top: 2px;
 		-webkit-appearance: none;
 
 		.is-focused & {

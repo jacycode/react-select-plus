@@ -1,12 +1,12 @@
 exports.AU = [
-	{ value: 'australian-capital-territory', label: 'Australian Capital Territory', className: 'State-ACT' },
-	{ value: 'new-south-wales', label: 'New South Wales', className: 'State-NSW' },
-	{ value: 'victoria', label: 'Victoria', className: 'State-Vic' },
-	{ value: 'queensland', label: 'Queensland', className: 'State-Qld' },
-	{ value: 'western-australia', label: 'Western Australia', className: 'State-WA' },
-	{ value: 'south-australia', label: 'South Australia', className: 'State-SA' },
-	{ value: 'tasmania', label: 'Tasmania', className: 'State-Tas' },
-	{ value: 'northern-territory', label: 'Northern Territory', className: 'State-NT' },
+	{ value: 'australian-capital-territory', label: '澳大利亚', className: 'State-ACT' },
+	{ value: 'new-south-wales', label: '新爱尔兰', className: 'State-NSW' },
+	{ value: 'victoria', label: '维克多', className: 'State-Vic' },
+	{ value: 'queensland', label: '昆士兰', className: 'State-Qld' },
+	{ value: 'western-australia', label: '西澳大利亚', className: 'State-WA' },
+	{ value: 'south-australia', label: '南澳大利压', className: 'State-SA' },
+	{ value: 'tasmania', label: '澳洲', className: 'State-Tas' },
+	{ value: 'northern-territory', label: '被盗达利亚', className: 'State-NT' },
 ];
 
 exports.US = [
