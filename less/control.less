@@ -40,6 +40,9 @@
 		pointer-events: none;
 		opacity: 0.35;
 	}
+	&:hover{
+	    cursor: pointer;
+	}
 }
 
 // base
@@ -63,6 +66,7 @@
 
 	&:hover {
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+		cursor: pointer;
 	}
 
 	.Select-input:focus {
@@ -113,7 +117,7 @@
 	position: absolute;
 	right: 0;
 	top: 1px;
-  	font-size: 12px;
+  	font-size: 14px;
 
 	// crop text
 	max-width: 100%;
@@ -126,7 +130,7 @@
 .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value {
 	.Select-value-label {
 		color: @select-text-color;
-	  	font-size: 12px;
+	  	font-size: 14px;
 	}
 	a.Select-value-label {
 		cursor: pointer;
@@ -239,6 +243,7 @@
 	vertical-align: middle;
 	width: (@select-arrow-width * 5);
 	padding-right: @select-arrow-width;
+	top: 2px;
 }
 
 .Select-arrow {
