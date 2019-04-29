@@ -1,45 +1,42 @@
 
-********************************************************
-**                React-Select-Plus-2                 **
-**                                                    **
-** 将React-Select-Plus中的Optiongroup设置为Label可点击。**
-********************************************************
+##React-Select-Plus-2
+##将React-Select-Plus中的Optiongroup设置为Label可点击
 1、选项形式为：
 ```javascript
 	[
 		{	
 			label:"fruit", 
 			options:[{
-								label:"apple"， 
-								value:"apple"
-							}, 
-							{	
-								label:"orange"， 
-								value:"orange"
-							}]
+				label:"apple"， 
+				value:"apple"
+			}, 
+			{	
+				label:"orange"， 
+				value:"orange"
+			}]
 		}
 	]
 ```
-	则Optiongroup标题不可点击。
+则Optiongroup标题不可点击。
 2、选项形式为:
 ```javascript
 	[
 		{	
 			options:[{
-								label:"fruit"， 
-								value:"fruit",
-								type:"label"
-							}, 
-							{	
-								label:"orange"， 
-								value:"orange"
-							}]
+				label:"fruit"， 
+				value:"fruit",
+				type:"label"
+			}, 
+			{	
+				label:"orange"， 
+				value:"orange"
+			}]
 		}
 	]
 ```
-	则optiongroup标题为fruit，且可点击选择。
+则optiongroup标题为fruit，且可点击选择。
 
-********************************************************
+##********************************************************
 
 React-Select-Plus
 
