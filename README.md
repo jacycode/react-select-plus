@@ -1,6 +1,6 @@
 
-##React-Select-Plus-2
-##将React-Select-Plus中的Optiongroup设置为Label可点击
+## React-Select-Plus-2
+## 将React-Select-Plus中的Optiongroup设置为Label可点击
 1、选项形式为：
 ```javascript
 	[
@@ -36,7 +36,7 @@
 ```
 则optiongroup标题为fruit，且可点击选择。
 
-##********************************************************
+## ********************************************************
 
 React-Select-Plus
 
