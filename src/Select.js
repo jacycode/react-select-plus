@@ -6,7 +6,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AutosizeInput from 'react-input-autosize';
+import AutosizeInput from 'react-input-autosize-2';
 import classNames from 'classnames';
 
 import defaultArrowRenderer from './utils/defaultArrowRenderer';

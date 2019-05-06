@@ -1,6 +1,6 @@
 {
   "name": "react-select-plus-2",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "A fork of react-select-2 with support group title label to click",
   "main": "lib/Select.js",
   "style": "dist/react-select-plus.min.css",
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.4",
-    "react-input-autosize": "1.1.0"
+    "react-input-autosize": "1.1.0",
+    "react-input-autosize-2": "^2.2.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
