@@ -304,28 +304,36 @@ var _utilsStripDiacritics = require('./utils/stripDiacritics');
 
 var _utilsStripDiacritics2 = _interopRequireDefault(_utilsStripDiacritics);
 
-var propTypes = {
-	autoload: _react2['default'].PropTypes.bool.isRequired, // automatically call the `loadOptions` prop on-mount; defaults to true
-	cache: _react2['default'].PropTypes.any, // object to use to cache results; set to null/false to disable caching
-	children: _react2['default'].PropTypes.func.isRequired, // Child function responsible for creating the inner Select component; (props: Object): PropTypes.element
-	ignoreAccents: _react2['default'].PropTypes.bool, // strip diacritics when filtering; defaults to true
-	ignoreCase: _react2['default'].PropTypes.bool, // perform case-insensitive filtering; defaults to true
-	loadingPlaceholder: _react2['default'].PropTypes.oneOfType([// replaces the placeholder while options are loading
-	_react2['default'].PropTypes.string, _react2['default'].PropTypes.node]),
-	loadOptions: _react2['default'].PropTypes.func.isRequired, // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
-	multi: _react2['default'].PropTypes.bool, // multi-value input
-	options: _react.PropTypes.array.isRequired, // array of options
-	placeholder: _react2['default'].PropTypes.oneOfType([// field placeholder, displayed when there's no value (shared with Select)
-	_react2['default'].PropTypes.string, _react2['default'].PropTypes.node]),
-	noResultsText: _react2['default'].PropTypes.oneOfType([// field noResultsText, displayed when no options come back from the server
-	_react2['default'].PropTypes.string, _react2['default'].PropTypes.node]),
-	onChange: _react2['default'].PropTypes.func, // onChange handler: function (newValue) {}
-	searchPromptText: _react2['default'].PropTypes.oneOfType([// label to prompt for search input
-	_react2['default'].PropTypes.string, _react2['default'].PropTypes.node]),
-	onInputChange: _react2['default'].PropTypes.func, // optional for keeping track of what is being typed
-	value: _react2['default'].PropTypes.any };
+// const propTypes = {
+// 	autoload: React.PropTypes.bool.isRequired,       // automatically call the `loadOptions` prop on-mount; defaults to true
+// 	cache: React.PropTypes.any,                      // object to use to cache results; set to null/false to disable caching
+// 	children: React.PropTypes.func.isRequired,       // Child function responsible for creating the inner Select component; (props: Object): PropTypes.element
+// 	ignoreAccents: React.PropTypes.bool,             // strip diacritics when filtering; defaults to true
+// 	ignoreCase: React.PropTypes.bool,                // perform case-insensitive filtering; defaults to true
+// 	loadingPlaceholder: React.PropTypes.oneOfType([  // replaces the placeholder while options are loading
+// 		React.PropTypes.string,
+// 		React.PropTypes.node
+// 	]),
+// 	loadOptions: React.PropTypes.func.isRequired,    // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
+// 	multi: React.PropTypes.bool,                     // multi-value input
+// 	options: PropTypes.array.isRequired,             // array of options
+// 	placeholder: React.PropTypes.oneOfType([         // field placeholder, displayed when there's no value (shared with Select)
+// 		React.PropTypes.string,
+// 		React.PropTypes.node
+// 	]),
+// 	noResultsText: React.PropTypes.oneOfType([       // field noResultsText, displayed when no options come back from the server
+// 		React.PropTypes.string,
+// 		React.PropTypes.node
+// 	]),
+// 	onChange: React.PropTypes.func,                  // onChange handler: function (newValue) {}
+// 	searchPromptText: React.PropTypes.oneOfType([    // label to prompt for search input
+// 		React.PropTypes.string,
+// 		React.PropTypes.node
+// 	]),
+// 	onInputChange: React.PropTypes.func,             // optional for keeping track of what is being typed
+// 	value: React.PropTypes.any,                      // initial field value
+// };
 
-// initial field value
 var defaultCache = {};
 
 var defaultProps = {
@@ -356,6 +364,8 @@ var Async = (function (_Component) {
 
 		this._onInputChange = this._onInputChange.bind(this);
 	}
+
+	// Async.propTypes = propTypes;
 
 	_createClass(Async, [{
 		key: 'componentDidMount',
@@ -530,8 +540,6 @@ var Async = (function (_Component) {
 })(_react.Component);
 
 exports['default'] = Async;
-
-Async.propTypes = propTypes;
 Async.defaultProps = defaultProps;
 
 function defaultChildren(props) {
